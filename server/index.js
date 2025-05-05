@@ -43,6 +43,7 @@ async function run() {
 
 
         const allProductsCollection = client.db("kalni").collection("products")
+        const allSubscribersCollection = client.db("kalni").collection("subscribers")
 
 
 
@@ -50,10 +51,26 @@ async function run() {
 
 
 
+        // PRODUCTS DATA
         app.get('/allProducts', async (req, res) => {
             const result = await allProductsCollection.find().toArray()
             res.send(result)
         })
+
+
+
+
+
+
+
+        // SUBSCRIBERS
+        app.post('/subscriber', async (req, res) => {
+            const data = req.body;
+            console.log(data)
+            const result = await allSubscribersCollection.insertOne(data)
+            res.send(result)
+        })
+
 
 
 

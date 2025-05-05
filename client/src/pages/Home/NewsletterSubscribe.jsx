@@ -2,19 +2,19 @@ import React from 'react';
 import message from '../../assets/images/icon/messege.png'
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
+import UseAxiosPublic from '../../hooks/UseAxiosPublic';
 
 const NewsletterSubscribe = () => {
 
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-    } = useForm()
+    const axiosPublic = UseAxiosPublic()
+
+    const { register, handleSubmit, watch, formState: { errors }, } = useForm()
 
     const onSubmit = (data) => {
+        const email = data.email
+        axiosPublic.post('/subscriber', { email })
         Swal.fire({
-            position: "top-end",
+            position: "top",
             icon: "success",
             title: "Successfully you subscribe",
             showConfirmButton: false,
@@ -30,19 +30,24 @@ const NewsletterSubscribe = () => {
 
     return (
         <div className='bg-[#3B4DF0]'>
-            <div className='xl:w-10/12 mx-auto flex flex-col lg:flex-row justify-between items-center'>
+            <div className='xl:w-10/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-10'>
                 <div>
                     <p className='text-lg'>SALE 20% OFF ALL STORE</p>
                     <h1 className='text-3xl font-semibold'>Subscribe our Newsletter</h1>
                 </div>
-                <div className='bg-white px-4 rounded py-1 flex justify-between xl:w-[554px]'>
-                    <input {...register("email")}
-                        type="email"
-                        className='bg-white text-black'
-                        placeholder='Enter your email address' />
-                    <button onSubmit={handleSubmit(onSubmit)}
-                        className="btn bg-[#3B4DF0] border-none">Subscribe</button>
-                </div>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='bg-white px-1 rounded py-1 flex justify-between xl:w-[554px]'>
+                        <input {...register("email")}
+                            type="email"
+                            required
+                            className='bg-white text-black focus:outline-none w-full'
+                            placeholder='Enter your email address' />
+                        <div className='form-control'>
+                            <button
+                                className="btn bg-[#3B4DF0] border-none">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
                 <img src={message} alt="" />
             </div>
         </div>
