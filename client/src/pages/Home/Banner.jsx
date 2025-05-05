@@ -9,7 +9,7 @@ import { Navigation } from 'swiper/modules';
 const Banner = () => {
 
     return (
-        <div>
+        <div className='pb-[120px]'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                     <div className='bg-white gap-10 h-auto flex flex-col-reverse lg:flex-row items-center justify-between'>

@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { PiShoppingCartThin } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 
 const Products = () => {
@@ -14,19 +15,23 @@ const Products = () => {
     const axiosPublic = UseAxiosPublic()
 
     const { data: Products = [] } = useQuery({
-        queryKey: ['allPro'],
+        queryKey: ['somePro'],
         queryFn: async () => {
             const result = await axiosPublic.get('/allProducts')
             return result.data
         }
     })
 
+    const someProducts = Products.slice(0, 7)
+
 
     return (
-        <div className='xl:w-10/12 mx-auto py-10'>
-            <div className='p-2 rounded mb-10 bg-white text-black flex justify-between items-center'>
+        <div className='xl:w-10/12 mx-auto pb-[120px]'>
+            <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
                 <h1 className='text-xl lg:text-4xl'>Product Sections</h1>
-                <h1 className='flex items-center gap-1'>View all <IoIosArrowForward></IoIosArrowForward></h1>
+                <Link to='/allProducts'>
+                    <h1 className='flex items-center gap-1'>View all<IoIosArrowForward></IoIosArrowForward></h1>
+                </Link>
             </div>
 
             <Swiper
@@ -57,7 +62,7 @@ const Products = () => {
                 style={{ paddingLeft: '28px' }}
             >
                 {
-                    Products.map(product => <SwiperSlide >
+                    someProducts.map(product => <SwiperSlide >
                         <div className='w-80 h-[494px] rounded text-black p-3 bg-white space-y-5'>
                             <img src={product.image} className='w-full h-56' alt="" />
                             <h1 className='text-2xl font-semibold'>{product.name}</h1>

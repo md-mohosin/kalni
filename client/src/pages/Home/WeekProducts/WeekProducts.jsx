@@ -19,9 +19,11 @@ const WeekProducts = () => {
         }
     })
 
+    const bestProduct = Products.filter(product => product.campaign=='best-price')
+
     return (
-        <div className='xl:w-10/12 mx-auto py-10'>
-            <div className='p-2 rounded mb-10 bg-white text-black flex justify-between items-center'>
+        <div className='xl:w-10/12 mx-auto pb-[120px]'>
+            <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
                     <h1 className='text-xl lg:text-4xl flex justify-self-start'>Deal of the week </h1>
                     <p>Don't miss out on this weeks deals</p>
@@ -57,7 +59,7 @@ const WeekProducts = () => {
                 style={{ paddingLeft: '28px' }}
             >
                 {
-                    Products.map(product => <SwiperSlide >
+                    bestProduct?.map(product => <SwiperSlide >
 
                         <div className='w-80 h-[494px] rounded text-black p-3 bg-white space-y-5'>
                             <img src={product.image} className='w-full h-56' alt="" />
