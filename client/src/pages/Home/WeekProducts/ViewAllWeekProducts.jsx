@@ -1,26 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import UseAxiosPublic from '../../../hooks/UseAxiosPublic';
+import { useQuery } from '@tanstack/react-query';
 import { PiShoppingCartThin } from 'react-icons/pi';
 
-const ViewAllProducts = () => {
+const ViewAllWeekProducts = () => {
 
     const axiosPublic = UseAxiosPublic()
 
     const { data: allProducts = [] } = useQuery({
-        queryKey: ['allPro'],
+        queryKey: ['weekpro'],
         queryFn: async () => {
             const res = await axiosPublic.get('/allProducts')
             return res.data
         }
     })
 
-    console.log(allProducts)
+    const allWeekProducts = allProducts.filter(item => item.campaign == 'weekend-deals')
+
     return (
-        <div className='pt-[120px] pb-[120px] text-black xl:w-10/12 mx-auto'>
+        <div className='text-black pt-[120px] pb-[120px] w-full xl:w-10/12 mx-auto'>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 place-items-center gap-6 gap-x-6'>
                 {
-                    allProducts.map(singleProduct => <div className='flex flex-col justify-between border w-[300px] h-full rounded text-black p-3 bg-white space-y-5'>
+                    allWeekProducts.map(singleProduct => <div className='flex flex-col justify-between border w-[300px] h-full rounded text-black p-3 bg-white space-y-5'>
                         <img src={singleProduct.image} className='w-full h-56' alt="" />
                         <h1 className='text-2xl font-semibold'>{singleProduct.name}</h1>
                         <p>{singleProduct.category}</p>
@@ -30,10 +31,9 @@ const ViewAllProducts = () => {
                     </div>
                     )
                 }
+            </div>
         </div>
-
-        </div >
     );
 };
 
-export default ViewAllProducts;
+export default ViewAllWeekProducts;

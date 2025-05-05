@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/authentication/Login";
 import Signup from "../pages/authentication/Signup";
 import ViewAllProducts from "../pages/Home/AllProducts/ViewAllProducts";
+import ViewAllWeekProducts from "../pages/Home/WeekProducts/ViewAllWeekProducts";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
             {
                 path:"allProducts",
                 element:<ViewAllProducts></ViewAllProducts>
+            },
+            {
+                path:"allWeekProducts",
+                element:<ViewAllWeekProducts></ViewAllWeekProducts>
             }
         ]
     },

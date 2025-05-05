@@ -38,10 +38,12 @@ const Navbar = () => {
 
             <div className='lg:w-11/12 xl:w-10/12 md:w-11/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 pb-6 pt-6'>
                 <div className='flex justify-between lg:w-3/4 w-full md:w-full'>
-                    <div className='flex items-center gap-2 lg:w-1/3'>
-                        <img className='w-7 h-7 lg:w-12 lg:h-12' src={logo} alt="" />
-                        <h1 className='text-xl lg:text-2xl font-bold italic text-black'>Kalni</h1>
-                    </div>
+                    <Link to='/'>
+                        <div className='flex items-center gap-2 lg:w-1/3'>
+                            <img className='w-7 h-7 lg:w-12 lg:h-12' src={logo} alt="" />
+                            <h1 className='text-xl lg:text-2xl font-bold italic text-black'>Kalni</h1>
+                        </div>
+                    </Link>
 
 
                     <div className='border-2 flex justify-between  items-center lg:w-2/3'>

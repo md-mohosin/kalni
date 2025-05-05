@@ -5,13 +5,14 @@ import { PiShoppingCartThin } from 'react-icons/pi';
 import { Navigation } from 'swiper/modules';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 const WeekProducts = () => {
 
 
     const axiosPublic = UseAxiosPublic()
 
-    const { data: Products = [] } = useQuery({
+    const { data: products = [] } = useQuery({
         queryKey: ['weekPro'],
         queryFn: async () => {
             const result = await axiosPublic.get('/allProducts')
@@ -19,7 +20,10 @@ const WeekProducts = () => {
         }
     })
 
-    const bestProduct = Products.filter(product => product.campaign=='best-price')
+
+    const weekProduct = products.filter(product => product.campaign == 'weekend-deals')
+
+    const someWeekProduct = weekProduct.slice(0,6)
 
     return (
         <div className='xl:w-10/12 mx-auto pb-[120px]'>
@@ -28,7 +32,9 @@ const WeekProducts = () => {
                     <h1 className='text-xl lg:text-4xl flex justify-self-start'>Deal of the week </h1>
                     <p>Don't miss out on this weeks deals</p>
                 </div>
-                <h1 className='flex items-center gap-1'>View all <IoIosArrowForward></IoIosArrowForward></h1>
+                <Link to='/allWeekProducts'>
+                    <h1 className='flex items-center gap-1'>View all <IoIosArrowForward></IoIosArrowForward></h1>
+                </Link>
             </div>
 
             <Swiper
@@ -59,7 +65,7 @@ const WeekProducts = () => {
                 style={{ paddingLeft: '28px' }}
             >
                 {
-                    bestProduct?.map(product => <SwiperSlide >
+                    someWeekProduct.map(product => <SwiperSlide >
 
                         <div className='w-80 h-[494px] rounded text-black p-3 bg-white space-y-5'>
                             <img src={product.image} className='w-full h-56' alt="" />
