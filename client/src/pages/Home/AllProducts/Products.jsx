@@ -26,7 +26,7 @@ const Products = () => {
 
 
     return (
-        <div className='xl:w-10/12 mx-auto pb-[120px]'>
+        <div className='xl:w-[1320px] mx-auto pb-[120px]'>
             <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
                 <h1 className='text-xl lg:text-4xl'>Product Sections</h1>
                 <Link to='/allProducts'>
@@ -36,6 +36,7 @@ const Products = () => {
 
             <Swiper
                 slidesPerView={4}
+                spaceBetween={32}
                 navigation={true}
                 modules={[Navigation]}
                 breakpoints={{
@@ -59,11 +60,11 @@ const Products = () => {
                     }
                 }}
                 className="mySwiper"
-                style={{ paddingLeft: '28px' }}
+                // style={{ paddingLeft: '28px' }}
             >
                 {
                     someProducts.map(product => <SwiperSlide >
-                        <div className='w-80 h-[494px] rounded text-black p-3 bg-white space-y-5'>
+                        <div className='w-[306px] h-[494px] rounded-[12px] text-black p-4 bg-white space-y-3 flex flex-col justify-between'>
                             <img src={product.image} className='w-full h-56' alt="" />
                             <h1 className='text-2xl font-semibold'>{product.name}</h1>
                             <p>{product.category}</p>

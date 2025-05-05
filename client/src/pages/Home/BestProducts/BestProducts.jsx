@@ -24,7 +24,7 @@ const BestProducts = () => {
     console.log(bestProducts)
 
     return (
-        <div className='pb-[120px] xl:w-10/12 mx-auto text-black'>
+        <div className='pb-[120px] xl:w-[1320px] mx-auto text-black'>
             <div className='bg-white p-3 rounded-md'>
                 <h1 className='text-xl'>Get Our Best Prices :{bestProducts.length}</h1>
             </div>

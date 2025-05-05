@@ -36,7 +36,8 @@ const Navbar = () => {
 
 
 
-            <div className='lg:w-11/12 xl:w-10/12 md:w-11/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 pb-6 pt-6'>
+            {/* FIRST NAV */}
+            <div className='lg:w-11/12 xl:w-[1320px] md:w-11/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 pb-6 pt-6'>
                 <div className='flex justify-between lg:w-3/4 w-full md:w-full'>
                     <Link to='/'>
                         <div className='flex items-center gap-2 lg:w-1/3'>
@@ -46,7 +47,7 @@ const Navbar = () => {
                     </Link>
 
 
-                    <div className='border-2 flex justify-between  items-center lg:w-2/3'>
+                    <div className='border-2 flex justify-between  items-center xl:w-[756px]'>
                         <select defaultValue="All Products" className="hidden lg:flex select select-ghost text-black focus:bg-white focus:text-black focus:outline-none">
                             <option disabled={true}>All Products</option>
                             <option>Inter</option>
@@ -60,7 +61,7 @@ const Navbar = () => {
                     <MdMenu color='black' size={30} className='lg:hidden'></MdMenu>
                 </div>
 
-                <div className='flex text-black justify-between items-center w-full lg:w-1/4'>
+                <div className='flex text-black justify-between gap-2 items-center w-full xl:w-[325px]'>
                     {
                         user ?
                             <button onClick={handlelogout}
@@ -75,16 +76,16 @@ const Navbar = () => {
                             </div></Link>
                     }
                     <div className='relative'>
-                        <div className='badge text-sm absolute ml-6 rounded-full bg-red-700 border-none'>0</div>
-                        <CiHeart size={35}></CiHeart>
+                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>
+                        <CiHeart size={30}></CiHeart>
                     </div>
                     <div className='relative'>
-                        <div className='badge text-sm absolute ml-6 rounded-full bg-red-700 border-none'>0</div>
-                        <CiShuffle size={35}></CiShuffle>
+                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>
+                        <CiShuffle size={30}></CiShuffle>
                     </div>
                     <div className='relative flex gap-4 items-center'>
-                        <div className='badge text-sm absolute ml-6 rounded-full bg-red-700 border-none'>0</div>
-                        <PiShoppingCartThin size={35}></PiShoppingCartThin>
+                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>0</div>
+                        <PiShoppingCartThin size={30}></PiShoppingCartThin>
                         <div>
                             <h1>Your Cart</h1>
                             <p>$0.00</p>
@@ -92,14 +93,15 @@ const Navbar = () => {
                     </div>
                 </div>
 
-
-
             </div>
 
             <hr className='border' />
 
+
+
+{/* SECOND NAV */}
             <div className='text-black pt-6 font-semibold hidden lg:flex'>
-                <div className='w-10/12 mx-auto flex justify-between items-center'>
+                <div className='xl:w-[1320px] mx-auto flex justify-between items-center'>
                     <div className='flex items-center gap-2'>
                         <CiMenuBurger size={25}></CiMenuBurger>
                         <h1 className='text-lg font-semibold'>Brows All Categories</h1>

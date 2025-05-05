@@ -26,7 +26,7 @@ const WeekProducts = () => {
     const someWeekProduct = weekProduct.slice(0,6)
 
     return (
-        <div className='xl:w-10/12 mx-auto pb-[120px]'>
+        <div className='xl:w-[1320px] mx-auto pb-[120px]'>
             <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
                     <h1 className='text-xl lg:text-4xl flex justify-self-start'>Deal of the week </h1>
@@ -40,6 +40,7 @@ const WeekProducts = () => {
             <Swiper
                 slidesPerView={4}
                 navigation={true}
+                spaceBetween={32}
                 modules={[Navigation]}
                 breakpoints={{
                     320: {
@@ -62,12 +63,12 @@ const WeekProducts = () => {
                     }
                 }}
                 className="mySwiper"
-                style={{ paddingLeft: '28px' }}
+                // style={{ paddingLeft: '28px' }}
             >
                 {
                     someWeekProduct.map(product => <SwiperSlide >
 
-                        <div className='w-80 h-[494px] rounded text-black p-3 bg-white space-y-5'>
+                        <div className='w-full h-[494px] rounded-[12px] text-black p-4 bg-white space-y-5'>
                             <img src={product.image} className='w-full h-56' alt="" />
                             <h1 className='text-2xl font-semibold'>{product.name}</h1>
                             <p>{product.category}</p>
