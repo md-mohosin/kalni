@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import UseAxiosPublic from '../../../hooks/UseAxiosPublic';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,12 +7,16 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { PiShoppingCartThin } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import UseAuth from '../../../hooks/UseAuth';
 
 
 const Products = () => {
 
     const axiosPublic = UseAxiosPublic()
+    const { user } = UseAuth()
+    const navigate = useNavigate()
 
     const { data: Products = [] } = useQuery({
         queryKey: ['somePro'],
@@ -23,6 +27,32 @@ const Products = () => {
     })
 
     const someProducts = Products.slice(0, 7)
+
+
+
+    const handleAddCart = (id) => {
+
+        if (!user) {
+
+            Swal.fire({
+                title: "Please log in to save this item to your cart",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Login"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/login")
+                }
+            });
+        }
+
+        else {
+            navigate(id)
+        }
+
+    }
 
 
     return (
@@ -60,7 +90,7 @@ const Products = () => {
                     }
                 }}
                 className="mySwiper"
-                // style={{ paddingLeft: '28px' }}
+            // style={{ paddingLeft: '28px' }}
             >
                 {
                     someProducts.map(product => <SwiperSlide >
@@ -70,7 +100,8 @@ const Products = () => {
                             <p>{product.category}</p>
                             <p>({product.review}review)</p>
                             <p className='text-[#E4333E] font-semibold text-xl'>${product.price}</p>
-                            <button className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
+                            <button onClick={() => handleAddCart(`/detailsProduct/${product._id}`)}
+                                className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
                         </div>
                     </SwiperSlide>)
                 }

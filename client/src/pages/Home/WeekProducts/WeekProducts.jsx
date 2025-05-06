@@ -68,7 +68,7 @@ const WeekProducts = () => {
                 {
                     someWeekProduct.map(product => <SwiperSlide >
 
-                        <div className='w-full h-[494px] rounded-[12px] text-black p-4 bg-white space-y-4'>
+                        <div className='w-full h-[494px] rounded-[12px] text-black p-4 bg-white space-y-3 flex flex-col justify-between'>
                             <img src={product.image} className='w-full h-56' alt="" />
                             <h1 className='text-2xl font-semibold'>{product.name}</h1>
                             <p>{product.category}</p>

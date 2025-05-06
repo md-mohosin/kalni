@@ -22,3 +22,14 @@
     font-size: 20px !important;
     color: white;
 }
+
+
+.react-tabs__tab-list{
+    display: flex;
+    justify-content: center;
+    border-bottom:none !important;
+}
+
+.react-tabs__tab-panel--selected{
+border: none;
+}

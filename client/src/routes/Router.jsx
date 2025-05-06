@@ -6,6 +6,7 @@ import Signup from "../pages/authentication/Signup";
 import ViewAllProducts from "../pages/Home/AllProducts/ViewAllProducts";
 import ViewAllWeekProducts from "../pages/Home/WeekProducts/ViewAllWeekProducts";
 import PrivetRoute from "./PrivetRoute";
+import ProductDetails from "../pages/AddToCartPage/ProductDetails";
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +23,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:"allWeekProducts",
-                element:<ViewAllWeekProducts></ViewAllWeekProducts>
+                element:<PrivetRoute><ViewAllWeekProducts></ViewAllWeekProducts></PrivetRoute>
+            },
+            {
+                path:"detailsProduct/:id",
+                element:<ProductDetails></ProductDetails>
             }
         ]
     },

@@ -9,6 +9,7 @@ import { FaBolt, FaCaretDown } from 'react-icons/fa6';
 import { MdMenu } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 import UseAuth from '../../hooks/UseAuth';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
 
@@ -16,7 +17,25 @@ const Navbar = () => {
 
 
     const handlelogout = () => {
-        logout()
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want to Logout",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logout()
+                Swal.fire({
+                    title: "Logout!",
+                    text: "You succeessfully logout.",
+                    icon: "success"
+                });
+            }
+        });
+
     }
 
     return (
@@ -65,7 +84,7 @@ const Navbar = () => {
                     {
                         user ?
                             <button onClick={handlelogout}
-                                className='btn bg-[#1D2939] border-none'>
+                                className='btn bg-[#1D2939] border-none text-white'>
                                 Logout
                             </button>
                             :
@@ -99,7 +118,7 @@ const Navbar = () => {
 
 
 
-{/* SECOND NAV */}
+            {/* SECOND NAV */}
             <div className='text-black pt-6 font-semibold hidden lg:flex'>
                 <div className='xl:w-[1320px] mx-auto flex justify-between items-center'>
                     <div className='flex items-center gap-2'>
@@ -108,7 +127,7 @@ const Navbar = () => {
                     </div>
                     <h1>|</h1>
 
-                    <NavLink to='/'>Homes</NavLink>
+                    <NavLink to='/'>Home</NavLink>
 
                     <div className='relative group'>
                         <NavLink to='/' className='flex items-center'>Popular Categories
