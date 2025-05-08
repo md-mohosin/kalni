@@ -110,14 +110,16 @@ const Navbar = () => {
                         <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>
                         <CiShuffle size={30}></CiShuffle>
                     </div>
-                    <div className='relative flex gap-4 items-center'>
-                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
-                        <PiShoppingCartThin size={30}></PiShoppingCartThin>
-                        <div>
-                            <h1>Your Cart</h1>
-                            <p className='font-semibold'>${parseInt(totalPrice)}</p>
+                    <Link to='/allShopingCart'>
+                        <div className='relative flex gap-4 items-center'>
+                            <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
+                            <PiShoppingCartThin size={30}></PiShoppingCartThin>
+                            <div>
+                                <h1>Your Cart</h1>
+                                <p className='font-semibold'>${parseInt(totalPrice)}</p>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
             </div>

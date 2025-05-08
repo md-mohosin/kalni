@@ -1,19 +1,20 @@
 import React from 'react';
 import UseCart from '../../hooks/UseCart';
+import { AiOutlineDelete } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const AllShopingCart = () => {
     const [cartData] = UseCart()
     return (
-        <div className='xl:w-[1320px] mx-auto text-black pt-20'>
-            <div>
-                <div className="overflow-x-auto">
+        <div className='xl:w-[1320px] mx-auto text-black pt-20 pb-16'>
+            <div className='flex gap-10 justify-between'>
+                <div className='border w-[900px]'>
                     <table className="table">
                         {/* head */}
                         <thead className='text-black'>
                             <tr>
                                 <th>Product</th>
                                 <th>Price</th>
-                                <th>Total</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -22,25 +23,25 @@ const AllShopingCart = () => {
                                 cartData.map(item => <tr>
                                     <td>
                                         <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle h-12 w-12">
+                                            <div>
+                                                <div className="h-16 w-[72px]">
                                                     <img
-                                                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                                                        src={item.produtImage}
                                                         alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
                                             <div>
-                                                <div className="font-bold">Hart Hagerty</div>
-                                                <div className="text-sm opacity-50">United States</div>
+                                                <h1 className='text-lg font-semibold'>{item.productName}</h1>
                                             </div>
                                         </div>
                                     </td>
                                     <td className='text-black'>
-                                        {item.productPrice}
+                                        <h1 className='text-[#3B4DF0] font-semibold text-lg'>{item.productPrice}</h1>
                                     </td>
-                                    <td>Purple</td>
                                     <th>
-                                        <button className="btn btn-ghost btn-xs">details</button>
+                                        <button>
+                                            <AiOutlineDelete size={30} color='red'></AiOutlineDelete>
+                                        </button>
                                     </th>
                                 </tr>
                                 )
@@ -48,7 +49,22 @@ const AllShopingCart = () => {
 
                         </tbody>
 
+                        <Link to='/allProducts'>
+                            <div className='pt-4'>
+                                <button className='btn bg-[#3B4DF0] border-none text-white'>Continue Shoping</button>
+                            </div>
+                        </Link>
+
                     </table>
+                </div>
+                <div className='w-[356px]'>
+                    <div>
+                        <h1 className='text-2xl font-bold'>Cart Totals</h1>
+                        <div className='flex justify-between items-center'>
+                            <h1>Subtotals</h1>
+                            <p>345987</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
