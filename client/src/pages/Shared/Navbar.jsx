@@ -10,10 +10,18 @@ import { MdMenu } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 import UseAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
+import UseAxiosPublic from '../../hooks/UseAxiosPublic';
+import { useQuery } from '@tanstack/react-query';
+import UseCart from '../../hooks/UseCart';
 
 const Navbar = () => {
 
     const { user, logout } = UseAuth()
+    const [cartData] = UseCart()
+
+
+    const totalPrice = cartData.reduce((total, item) => total + item.productPrice, 0)
+    console.log(totalPrice)
 
 
     const handlelogout = () => {
@@ -103,11 +111,11 @@ const Navbar = () => {
                         <CiShuffle size={30}></CiShuffle>
                     </div>
                     <div className='relative flex gap-4 items-center'>
-                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>0</div>
+                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
                         <PiShoppingCartThin size={30}></PiShoppingCartThin>
                         <div>
                             <h1>Your Cart</h1>
-                            <p>$0.00</p>
+                            <p className='font-semibold'>${parseInt(totalPrice)}</p>
                         </div>
                     </div>
                 </div>
@@ -142,7 +150,7 @@ const Navbar = () => {
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
                         </NavLink>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
-                            <NavLink>All Products</NavLink>
+                            <NavLink to='/allProducts'>All Products</NavLink>
                         </ul>
                     </div>
                     <div className='relative group'>

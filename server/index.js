@@ -44,6 +44,7 @@ async function run() {
 
         const allProductsCollection = client.db("kalni").collection("products")
         const allSubscribersCollection = client.db("kalni").collection("subscribers")
+        const cartsCollection = client.db("kalni").collection("cart")
 
 
 
@@ -79,6 +80,39 @@ async function run() {
             res.send(result)
         })
 
+
+
+
+
+
+        // CARTS DATA
+        app.post('/cart', async (req, res) => {
+            const cart = req.body;
+            const result = await cartsCollection.insertOne(cart)
+            res.send(result)
+        })
+
+
+
+        
+
+
+
+        app.get('/cart', async (req, res) => {
+            const email = req.query.email
+            const query = { userEmail: email }
+            const result = await cartsCollection.find(query).toArray()
+            res.send(result)
+        })
+
+
+
+        // app.get('/cart/email', async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { userEmail: email }
+        //     const result = await cartsCollection.find(query).toArray()
+        //     res.send(result)
+        // })
 
 
 

@@ -7,6 +7,8 @@ import { CiHeart, CiMail } from 'react-icons/ci';
 import star from '../../assets/images/icon/star.png'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import NewsletterSubscribe from '../Home/NewsletterSubscribe';
+import AddToCartBtn from '../AddToCartBtn/AddToCartBtn';
 
 const ProductDetails = () => {
     const axiosPublic = UseAxiosPublic()
@@ -37,15 +39,15 @@ const ProductDetails = () => {
                             <CiMail size={25}></CiMail>
                         </div>
                     </div>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center gap-4 pt-6'>
                         <img src={star} alt="" />
                         <p>{detailsProduct.review} Customer Review</p>
                     </div>
                     <div className='border my-8'></div>
                     <h1 className='text-[#3B4DF0] text-xl font-semibold'>${detailsProduct.price}</h1>
                     <div className='flex items-center gap-10 pt-4'>
-                        <button className="btn btn-primary w-52 py-6 btn-outline border bo">Add To Cart</button>
-                        <button className="btn w-52 py-7 btn-primary">Buy Now</button>
+                        <AddToCartBtn product={detailsProduct}></AddToCartBtn>
+                        <button className="btn w-52 py-6 btn-primary">Buy Now</button>
                         <CiHeart size={60} className='border p-2'></CiHeart>
                     </div>
                 </div>
@@ -54,7 +56,7 @@ const ProductDetails = () => {
 
 
             {/* TAB */}
-           <div className='pt-[70px] text-black'>
+           <div className='pt-[70px]  pb-[80px] text-black'>
            <div className='bg-white xl:w-[1320px] mx-auto '>
                 <Tabs className='p-10'>
                     <TabList>
@@ -65,14 +67,7 @@ const ProductDetails = () => {
 
                     <TabPanel>
                         <div>
-                            <b>Mario</b> (<i>Japanese: マリオ Hepburn: Mario, [ma.ɾʲi.o]</i>) (<i>English:
-                                /ˈmɑːrioʊ/; Italian: [ˈmaːrjo]</i>) is a fictional character in the Mario video
-                            game franchise, owned by Nintendo and created by Japanese video game designer
-                            Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist
-                            of the series, Mario has appeared in over 200 video games since his creation.
-                            Depicted as a short, pudgy, Italian plumber who resides in the Mushroom
-                            Kingdom, his adventures generally center upon rescuing Princess Peach from the
-                            Koopa villain Bowser. His younger brother and sidekick is Luigi.
+                        <h1 className='text-lg'>{detailsProduct.description}</h1>
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -128,6 +123,7 @@ const ProductDetails = () => {
                 </Tabs>
             </div>
            </div>
+           {/* <NewsletterSubscribe></NewsletterSubscribe> */}
         </div>
     );
 };

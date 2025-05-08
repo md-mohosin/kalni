@@ -21,7 +21,6 @@ const BestProducts = () => {
     })
 
     const bestProducts = products.filter(product => product.campaign == 'best-price')
-    console.log(bestProducts)
 
     return (
         <div className='pb-[120px] xl:w-[1320px] mx-auto text-black'>

@@ -6,6 +6,7 @@ import icon from '../../assets/images/icon/Back.png'
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../../hooks/UseAuth';
+import GoogleLogin from './SocialLogin/GoogleLogin';
 
 const Login = () => {
 
@@ -74,6 +75,9 @@ const Login = () => {
                             <button className="btn bg-[#1D2939] border-none w-full px-6 text-lg text-white">Login</button>
                         </div>
                     </form>
+                    <div className='flex justify-center pt-6'>
+                        <GoogleLogin></GoogleLogin>
+                    </div>
                     <h1 className='text-black pt-6 text-lg'>Don't have an account? <Link to='/signup' className='text-red-600 font-bold'>SignUP</Link></h1>
                 </div>
             </div>

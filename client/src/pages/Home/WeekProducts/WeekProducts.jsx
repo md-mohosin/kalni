@@ -5,10 +5,14 @@ import { PiShoppingCartThin } from 'react-icons/pi';
 import { Navigation } from 'swiper/modules';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import UseAuth from '../../../hooks/UseAuth';
+import Swal from 'sweetalert2';
 
 const WeekProducts = () => {
 
+    const {user}=UseAuth()
+    const navigate = useNavigate()
 
     const axiosPublic = UseAxiosPublic()
 
@@ -23,7 +27,34 @@ const WeekProducts = () => {
 
     const weekProduct = products.filter(product => product.campaign == 'weekend-deals')
 
-    const someWeekProduct = weekProduct.slice(0,6)
+    const someWeekProduct = weekProduct.slice(0, 6)
+
+
+
+    const AddToCart = (id) => {
+
+        if (!user) {
+
+            Swal.fire({
+                title: "Please log in to save this item to your cart",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Login"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/login")
+                }
+            });
+        }
+
+        else {
+            navigate(`/detailsProduct/${id}`)
+        }
+    }
+
+
 
     return (
         <div className='xl:w-[1320px] mx-auto pb-[120px]'>
@@ -63,7 +94,7 @@ const WeekProducts = () => {
                     }
                 }}
                 className="mySwiper"
-                // style={{ paddingLeft: '28px' }}
+            // style={{ paddingLeft: '28px' }}
             >
                 {
                     someWeekProduct.map(product => <SwiperSlide >
@@ -74,7 +105,8 @@ const WeekProducts = () => {
                             <p>{product.category}</p>
                             <p>({product.review}review)</p>
                             <p className='text-[#E4333E] font-semibold text-xl'>${product.price}</p>
-                            <button className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
+                            <button onClick={() => AddToCart(product._id)}
+                                className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
                         </div>
                     </SwiperSlide>)
                 }

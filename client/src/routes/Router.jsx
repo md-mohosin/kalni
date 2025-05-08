@@ -7,6 +7,7 @@ import ViewAllProducts from "../pages/Home/AllProducts/ViewAllProducts";
 import ViewAllWeekProducts from "../pages/Home/WeekProducts/ViewAllWeekProducts";
 import PrivetRoute from "./PrivetRoute";
 import ProductDetails from "../pages/AddToCartPage/ProductDetails";
+import AllShopingCart from "../pages/AllShopingCart/AllShopingCart";
 
 export const router = createBrowserRouter([
     {
@@ -18,25 +19,29 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:"allProducts",
-                element:<PrivetRoute><ViewAllProducts></ViewAllProducts></PrivetRoute>
+                path: "allProducts",
+                element: <ViewAllProducts></ViewAllProducts>
             },
             {
-                path:"allWeekProducts",
-                element:<PrivetRoute><ViewAllWeekProducts></ViewAllWeekProducts></PrivetRoute>
+                path: "allWeekProducts",
+                element: <ViewAllWeekProducts></ViewAllWeekProducts>
             },
             {
-                path:"detailsProduct/:id",
-                element:<ProductDetails></ProductDetails>
+                path: "detailsProduct/:id",
+                element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>
+            },
+            {
+                path:"allShopingCart",
+                element:<AllShopingCart></AllShopingCart>
             }
         ]
     },
     {
-        path:"/login",
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>
     },
     {
-        path:"/signup",
-        element:<Signup></Signup>
+        path: "/signup",
+        element: <Signup></Signup>
     }
 ]);
