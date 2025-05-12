@@ -3,7 +3,7 @@ import UseAuth from '../hooks/UseAuth';
 import { Navigate } from 'react-router-dom';
 
 const PrivetRoute = ({ children }) => {
-    const { user } = UseAuth()
+    const { user,loading } = UseAuth()
     if (user) {
         return children
     }
