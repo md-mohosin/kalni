@@ -8,6 +8,7 @@ import ViewAllWeekProducts from "../pages/Home/WeekProducts/ViewAllWeekProducts"
 import PrivetRoute from "./PrivetRoute";
 import ProductDetails from "../pages/AddToCartPage/ProductDetails";
 import AllShopingCart from "../pages/AllShopingCart/AllShopingCart";
+import Checkout from "../pages/Checkout/Checkout";
 
 export const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path:"allShopingCart",
                 element:<PrivetRoute><AllShopingCart></AllShopingCart></PrivetRoute>
+            },
+            {
+                path:"checkout",
+                element:<Checkout></Checkout>
             }
         ]
     },

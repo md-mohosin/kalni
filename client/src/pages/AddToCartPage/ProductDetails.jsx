@@ -7,7 +7,6 @@ import { CiHeart, CiMail } from 'react-icons/ci';
 import star from '../../assets/images/icon/star.png'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import NewsletterSubscribe from '../Home/NewsletterSubscribe';
 import AddToCartBtn from '../AddToCartBtn/AddToCartBtn';
 
 const ProductDetails = () => {

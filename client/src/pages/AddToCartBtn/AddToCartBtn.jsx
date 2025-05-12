@@ -8,8 +8,6 @@ const AddToCartBtn = ({ product }) => {
 
     const axiosPublic = UseAxiosPublic()
     const { user } = UseAuth()
-    const navigat = useNavigate()
-
 
     const cartItem = {
         productId: product.id,
@@ -29,7 +27,6 @@ const AddToCartBtn = ({ product }) => {
             timer: 1500
         });
         axiosPublic.post('/cart', cartItem)
-        navigat('/allShopingCart')
 
     }
 

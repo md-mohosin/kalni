@@ -82,7 +82,7 @@ const Navbar = () => {
                             <option>Raleway</option>
                         </select>
                         <h1 className='font-semibold text-black px-4 hidden lg:flex'>|</h1>
-                        <input type="text" className='bg-white w-auto text-black' placeholder='Search ' />
+                        <input type="text" className='bg-white w-auto text-black focus:outline-none' placeholder='Search ' />
                         <button className="hidden lg:flex btn bg-[#3B4DF0] border-none rounded-none px-6">Search</button>
                     </div>
                     <MdMenu color='black' size={30} className='lg:hidden'></MdMenu>

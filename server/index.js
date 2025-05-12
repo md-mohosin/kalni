@@ -94,7 +94,12 @@ async function run() {
 
 
 
-        
+        app.delete('/cart/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) }
+            const result = await cartsCollection.deleteOne(query)
+            res.send(result)
+        })
 
 
 
@@ -104,15 +109,6 @@ async function run() {
             const result = await cartsCollection.find(query).toArray()
             res.send(result)
         })
-
-
-
-        // app.get('/cart/email', async (req, res) => {
-        //     const email = req.query.email;
-        //     const query = { userEmail: email }
-        //     const result = await cartsCollection.find(query).toArray()
-        //     res.send(result)
-        // })
 
 
 
