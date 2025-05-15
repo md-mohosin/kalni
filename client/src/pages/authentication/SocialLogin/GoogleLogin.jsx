@@ -1,12 +1,14 @@
-import React from 'react';
+
 import UseAuth from '../../../hooks/UseAuth';
 import { FaGoogle } from 'react-icons/fa';
-import UseAxiosPublic from '../../../hooks/UseAxiosPublic';
+import { useNavigate } from 'react-router-dom';
 
 const GoogleLogin = () => {
+    const navigate = useNavigate()
     const { googleLogin, user } = UseAuth()
     const handleGoogleLogin = () => {
         googleLogin()
+        navigate('/')
     }
     return (
         <div>
