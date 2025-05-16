@@ -16,7 +16,7 @@ const Banner = () => {
                     <div className='bg-white gap-10 h-auto flex flex-col-reverse lg:flex-row items-center justify-between'>
                         <div className='lg:w-1/2 text-black'>
                             <div className=' flex flex-col lg:justify-self-end space-y-9'>
-                                <h1 className='text-4xl lg:text-6xl font-bold'>Discover your  perfect <br /> stylish and  suited cloth</h1>
+                                <h1 className='text-4xl lg:text-6xl font-bold'>Discover your  perfect <br /> stylish and  suited cloths</h1>
                                 <p>Up to 20% discount
                                     in all categories of <br /> your buying fashion clothes. Limited time only. Get hurry!</p>
                                 <Link to='/allProducts'>
