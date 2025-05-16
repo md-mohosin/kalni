@@ -1,13 +1,14 @@
-import React from 'react';
+
 import UseAxiosPublic from '../../hooks/UseAxiosPublic';
 import UseAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import UseCart from '../../hooks/UseCart';
 
 const AddToCartBtn = ({ product }) => {
 
     const axiosPublic = UseAxiosPublic()
     const { user } = UseAuth()
+    const [,refetch]=UseCart()
 
     const cartItem = {
         productId: product.id,
@@ -26,7 +27,11 @@ const AddToCartBtn = ({ product }) => {
             showConfirmButton: false,
             timer: 1500
         });
-        axiosPublic.post('/cart', cartItem)
+       const res =await axiosPublic.post('/cart', cartItem)
+        if(res.data.insertedId){
+            refetch()
+        }
+        
 
     }
 

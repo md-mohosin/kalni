@@ -7,18 +7,21 @@ import Swal from 'sweetalert2'
 
 const AllShopingCart = () => {
     const axiosPublic = UseAxiosPublic()
-    const [cartData] = UseCart()
+    const [cartData, refetch] = UseCart()
     const totalPrice = cartData.reduce((total, item) => total + item.productPrice, 0)
 
     const handleDelete = (id) => {
         axiosPublic.delete(`/cart/${id}`)
-           Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Delete it",
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Delete it",
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        refetch()
+
     }
 
     return (

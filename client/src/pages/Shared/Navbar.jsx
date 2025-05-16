@@ -140,25 +140,25 @@ const Navbar = () => {
                     <NavLink to='/'>Home</NavLink>
 
                     <div className='relative group'>
-                        <NavLink to='/' className='flex items-center'>Popular Categories
+                        <div to='/' className='flex items-center cursor-pointer'>Popular Categories
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
-                        </NavLink>
+                        </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
                             <NavLink>All Categories</NavLink>
                         </ul>
                     </div>
                     <div className='relative group'>
-                        <NavLink to='/' className='flex items-center'>Product Section
+                        <div to='/' className='flex items-center cursor-pointer'>Product Section
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
-                        </NavLink>
+                        </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
                             <NavLink to='/allProducts'>All Products</NavLink>
                         </ul>
                     </div>
                     <div className='relative group'>
-                        <NavLink to='/' className='flex items-center'>Newsletter
+                        <div to='/' className='flex items-center cursor-pointer'>Newsletter
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
-                        </NavLink>
+                        </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
                             <NavLink to='/allpa'>All News</NavLink>
                         </ul>

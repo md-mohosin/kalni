@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
@@ -18,7 +19,9 @@ const Banner = () => {
                                 <h1 className='text-4xl lg:text-6xl font-bold'>Discover your  perfect <br /> stylish and  suited cloth</h1>
                                 <p>Up to 20% discount
                                     in all categories of <br /> your buying fashion clothes. Limited time only. Get hurry!</p>
-                                <button className='btn bg-[#1D2939] w-36 text-white'>Shop now</button>
+                                <Link to='/allProducts'>
+                                    <button className='btn bg-[#1D2939] w-36 text-white'>Shop now</button>
+                                    </Link>
                             </div>
                         </div>
                         <div className='lg:w-1/2'>

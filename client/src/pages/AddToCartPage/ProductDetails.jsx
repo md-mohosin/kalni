@@ -14,10 +14,11 @@ const ProductDetails = () => {
     const { id } = useParams()
 
 
-    const { data: detailsProduct = [] } = useQuery({
+    const { data: detailsProduct = []} = useQuery({
         queryKey: ['details'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/allProducts/${id}`)
+            
             return res.data
         }
     })
