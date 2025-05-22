@@ -42,11 +42,27 @@ async function run() {
 
 
 
+        const allUsersColections = client.db("kalni").collection("users")
         const allProductsCollection = client.db("kalni").collection("products")
         const allSubscribersCollection = client.db("kalni").collection("subscribers")
         const cartsCollection = client.db("kalni").collection("cart")
 
 
+
+
+
+
+        // USERS DATA
+        app.post('/user', async (req, res) => {
+            const user = req.body
+            const query = { email: user.email }
+            const existingUser = await allUsersColections.findOne(query)
+            if(existingUser){
+                return null
+            }
+            const result = await allUsersColections.insertOne(user)
+            res.send(result)
+        })
 
 
 

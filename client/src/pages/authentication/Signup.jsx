@@ -6,8 +6,11 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import UseAuth from '../../hooks/UseAuth';
 import GoogleLogin from './SocialLogin/GoogleLogin';
+import UseAxiosPublic from '../../hooks/UseAxiosPublic';
 
 const Signup = () => {
+
+    const axiosPublic = UseAxiosPublic()
 
     const navigate = useNavigate()
 
@@ -24,13 +27,24 @@ const Signup = () => {
                 await Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Signin successfully",
+                    title: "Signup successfully",
                     showConfirmButton: false,
                     timer: 1500
                 });
                 console.log(data)
                 reset()
                 navigate('/')
+
+
+                const userData = {
+                    name: data.name,
+                    email: data.email,
+                    password: data.password,
+                    // photo: data.display.photoURL
+                }
+                axiosPublic.post('/user', userData)
+
+
             })
             .catch(error => {
                 console.log(error)

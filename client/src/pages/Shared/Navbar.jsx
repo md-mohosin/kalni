@@ -21,7 +21,6 @@ const Navbar = () => {
 
 
     const totalPrice = cartData.reduce((total, item) => total + item.productPrice, 0)
-    console.log(totalPrice)
 
 
     const handlelogout = () => {

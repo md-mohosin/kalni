@@ -5,6 +5,7 @@ const LoadingSpinner = () => {
         <div>
             <div className='flex justify-center items-center min-h-screen bg-white'>
                 <div>
+
                     <FidgetSpinner
                         visible={true}
                         height="80"
