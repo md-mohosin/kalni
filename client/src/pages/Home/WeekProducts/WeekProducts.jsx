@@ -57,8 +57,8 @@ const WeekProducts = () => {
 
 
     return (
-        <div className='xl:w-[1320px] mx-auto pb-[120px]'>
-            <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
+        <div className='xl:w-[1320px] pb-20 mx-auto'>
+            <div className='p-2 rounded mb-6 bg-white text-black flex justify-between items-center'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
                     <h1 className='text-xl lg:text-4xl flex justify-self-start'>Deal of the week </h1>
                     <p>Don't miss out on this weeks deals</p>

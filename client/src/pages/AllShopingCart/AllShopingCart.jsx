@@ -12,6 +12,9 @@ const AllShopingCart = () => {
 
     const handleDelete = (id) => {
         axiosPublic.delete(`/cart/${id}`)
+            .then(() => {
+                refetch()
+            })
         Swal.fire({
             position: "top-end",
             icon: "success",
@@ -20,7 +23,6 @@ const AllShopingCart = () => {
             timer: 1500
         })
 
-        refetch()
 
     }
 

@@ -11,7 +11,7 @@ const Home = () => {
         <div className='bg-[#F1F5F6]'>
             <Banner></Banner>
            <Products></Products>
-           <BestProducts></BestProducts>
+           {/* <BestProducts></BestProducts> */}
            <Descover></Descover>
            <WeekProducts></WeekProducts>
         </div>

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
 
     return (
-        <div className='pb-[120px]'>
+        <div className='pb-20'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                     <div className='bg-white gap-10 h-auto flex flex-col-reverse lg:flex-row items-center justify-between'>

@@ -8,7 +8,7 @@ const AddToCartBtn = ({ product }) => {
 
     const axiosPublic = UseAxiosPublic()
     const { user } = UseAuth()
-    const [,refetch]=UseCart()
+    const [, refetch] = UseCart()
 
     const cartItem = {
         productId: product.id,
@@ -27,11 +27,11 @@ const AddToCartBtn = ({ product }) => {
             showConfirmButton: false,
             timer: 1500
         });
-       const res =await axiosPublic.post('/cart', cartItem)
-        if(res.data.insertedId){
-            refetch()
-        }
-        
+        axiosPublic.post('/cart', cartItem)
+            .then(() => {
+                refetch()
+            })
+
 
     }
 

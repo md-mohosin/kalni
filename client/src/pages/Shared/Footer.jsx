@@ -7,7 +7,7 @@ import card4 from '../../assets/images/icon/apple.png'
 
 const Footer = () => {
     return (
-        <div className='bg-white pt-[120px] text-black'>
+        <div className='bg-white pt-16 text-black'>
             <div className='xl:w-[1320px] pb-20 mx-auto flex justify-between items-center'>
                 <div>
                     <img src={logo} alt="" />

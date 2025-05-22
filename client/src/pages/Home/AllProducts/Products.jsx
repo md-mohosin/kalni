@@ -56,8 +56,8 @@ const Products = () => {
 
 
     return (
-        <div className='xl:w-[1320px] mx-auto pb-[120px]'>
-            <div className='p-2 rounded mb-4 bg-white text-black flex justify-between items-center'>
+        <div className='xl:w-[1320px] pb-20 mx-auto'>
+            <div className='p-2 rounded mb-6 bg-white text-black flex justify-between items-center'>
                 <h1 className='text-xl lg:text-4xl'>Product Sections</h1>
                 <Link to='/allProducts'>
                     <h1 className='flex items-center gap-1'>View all<IoIosArrowForward></IoIosArrowForward></h1>
