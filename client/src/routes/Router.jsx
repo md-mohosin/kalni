@@ -10,6 +10,8 @@ import ProductDetails from "../pages/AddToCartPage/ProductDetails";
 import AllShopingCart from "../pages/AllShopingCart/AllShopingCart";
 import Checkout from "../pages/Checkout/Checkout";
 import ErrorPage from "../pages/Shared/ErrorPage";
+import DashboardLayout from "../layouts/DashboardLayout";
+import CustomerHome from "../pages/Dashboard/CustomerDashboard/CustomerHome";
 
 export const router = createBrowserRouter([
     {
@@ -50,5 +52,16 @@ export const router = createBrowserRouter([
     {
         path: "/signup",
         element: <Signup></Signup>
+    },
+    {
+        path:'/dashboard',
+        element:<DashboardLayout></DashboardLayout>,
+        children:[
+            {
+                path:"home",
+                element:<CustomerHome></CustomerHome>
+            }
+            
+        ]
     }
 ]);
