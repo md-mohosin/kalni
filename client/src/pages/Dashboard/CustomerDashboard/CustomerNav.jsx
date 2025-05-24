@@ -2,11 +2,14 @@ import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { CiShoppingCart } from "react-icons/ci";
 
-const CustomerNav = () => {
+const CustomerNav = ({ handleClick }) => {
+
+
     return (
         <div>
             <div>
-                <NavLink to='/dashboard/customerOrder'
+                <NavLink onClick={handleClick}
+                    to='/dashboard/customerOrder'
                     className="text-black flex justify-between items-center">
                     <div className="flex gap-2 items-center text-2xl">
                         <CiShoppingCart size={19} color="blue" />
