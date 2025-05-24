@@ -93,7 +93,7 @@ const Products = () => {
             // style={{ paddingLeft: '28px' }}
             >
                 {
-                    someProducts.map(product => <SwiperSlide >
+                    someProducts.map(product => <SwiperSlide key={product._id}>
                         <div className='w-[306px] h-[494px] rounded-[12px] text-black p-4 bg-white space-y-3 flex flex-col justify-between'>
                             <img src={product.image} className='w-full h-56' alt="" />
                             <h1 className='text-2xl font-semibold'>{product.name}</h1>

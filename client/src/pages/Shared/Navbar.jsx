@@ -1,49 +1,25 @@
-import React from 'react';
 import logo from '../../assets/images/icon/Vector.png'
 import { CiHeart, CiMenuBurger, CiShuffle, CiUser } from 'react-icons/ci';
 import { PiShoppingCartThin } from 'react-icons/pi';
 import { Link, NavLink } from 'react-router-dom';
 import { TbRosetteDiscountFilled } from 'react-icons/tb';
 import Marquee from 'react-fast-marquee';
-import { FaBolt, FaCaretDown } from 'react-icons/fa6';
+import { FaBolt } from 'react-icons/fa6';
 import { MdMenu } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 import UseAuth from '../../hooks/UseAuth';
-import Swal from 'sweetalert2';
-import UseAxiosPublic from '../../hooks/UseAxiosPublic';
-import { useQuery } from '@tanstack/react-query';
 import UseCart from '../../hooks/UseCart';
+import { RxDashboard } from "react-icons/rx";
 
 const Navbar = () => {
 
-    const { user, logout } = UseAuth()
+    const { user } = UseAuth()
     const [cartData] = UseCart()
 
 
     const totalPrice = cartData.reduce((total, item) => total + item.productPrice, 0)
 
 
-    const handlelogout = () => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You want to Logout",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                logout()
-                Swal.fire({
-                    title: "Logout!",
-                    text: "You succeessfully logout.",
-                    icon: "success"
-                });
-            }
-        });
-
-    }
 
     return (
         <div className='bg-white'>
@@ -90,16 +66,18 @@ const Navbar = () => {
                 <div className='flex text-black justify-between gap-2 items-center w-full xl:w-[325px]'>
                     {
                         user ?
-                            <button onClick={handlelogout}
-                                className='btn bg-[#1D2939] border-none text-white'>
-                                Logout
-                            </button>
+                            <Link to='/dashboard/home'
+                                className='flex justify-center items-center text-lg gap-1 text-[#3346ef] font-semibold'>
+                                <RxDashboard size={24}></RxDashboard>
+                                <h1>Dashboard</h1>
+                            </Link>
                             :
 
                             <Link to='/login'><div className='flex items-center gap-1'>
                                 <CiUser size={30}></CiUser>
                                 <h1 className='text-sm'>Loign <br /> Account</h1>
-                            </div></Link>
+                            </div>
+                            </Link>
                     }
                     <div className='relative'>
                         <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>

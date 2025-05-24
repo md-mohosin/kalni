@@ -78,6 +78,9 @@ const AllShopingCart = () => {
 
                     </table>
                 </div>
+
+
+                {/* TOTALS */}
                 <div className='w-[356px]'>
                     <div className='space-y-8 border p-6'>
                         <h1 className='text-2xl font-bold'>Cart Totals</h1>

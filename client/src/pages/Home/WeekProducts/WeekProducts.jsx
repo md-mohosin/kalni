@@ -97,7 +97,7 @@ const WeekProducts = () => {
             // style={{ paddingLeft: '28px' }}
             >
                 {
-                    someWeekProduct.map(product => <SwiperSlide >
+                    someWeekProduct.map(product => <SwiperSlide key={product._id}>
 
                         <div className='w-full h-[494px] rounded-[12px] text-black p-4 bg-white space-y-3 flex flex-col justify-between'>
                             <img src={product.image} className='w-full h-56' alt="" />

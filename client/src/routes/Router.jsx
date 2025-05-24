@@ -12,6 +12,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import ErrorPage from "../pages/Shared/ErrorPage";
 import DashboardLayout from "../layouts/DashboardLayout";
 import CustomerHome from "../pages/Dashboard/CustomerDashboard/CustomerHome";
+import CustomerOrder from "../pages/Dashboard/CustomerDashboard/CustomerOrder";
 
 export const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
             {
                 path:"home",
                 element:<CustomerHome></CustomerHome>
+            },
+            {
+                path:"customerOrder",
+                element:<CustomerOrder></CustomerOrder>
             }
             
         ]

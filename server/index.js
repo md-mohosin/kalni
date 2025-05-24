@@ -57,13 +57,21 @@ async function run() {
             const user = req.body
             const query = { email: user.email }
             const existingUser = await allUsersColections.findOne(query)
-            if(existingUser){
+            if (existingUser) {
                 return null
             }
-            const result = await allUsersColections.insertOne(user)
+            const result = await allUsersColections.insertOne({ ...user, role: 'customer' })
             res.send(result)
         })
 
+
+
+        // get user role
+        app.get('/user/role/:email', async (req, res) => {
+            const email = req.params.email;
+            const result = await allUsersColections.findOne({email})
+            res.send({ role: result?.role })
+        })
 
 
 
