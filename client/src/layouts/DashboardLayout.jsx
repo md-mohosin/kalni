@@ -55,7 +55,7 @@ const DashboardLayout = () => {
                     <RiMenuFold2Line size={40} color="black" />
                 </div>
                 {/* sidebar */}
-                <div className={` bg-blue-500 left-0 h-full w-64 border rounded-2xl text-white p-4 transition-transform duration-300 z-10 ${isOpen ? "absolute z-10 block" : "hidden lg:flex"}`}>
+                <div className={`left-0 h-full w-64 border rounded-2xl text-white p-4 transition-transform duration-300 z-10 ${isOpen ? "absolute z-10 block" : "hidden lg:flex"}`}>
 
 
                     <div className="flex h-full text-white rounded-2xl p-4 flex-col justify-between">

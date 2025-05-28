@@ -22,7 +22,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='bg-white'>
+        <div className='bg-white font-montserrat'>
 
             <div className='bg-[#3B4DF0] p-3'>
                 <Marquee pauseOnHover={true}>
@@ -68,7 +68,7 @@ const Navbar = () => {
                         user ?
                             <Link to='/dashboard/home'
                                 className='flex justify-center items-center text-lg gap-1 text-[#3346ef] font-semibold'>
-                                <RxDashboard size={24}></RxDashboard>
+                                {/* <RxDashboard size={24}></RxDashboard> */}
                                 <h1>Dashboard</h1>
                             </Link>
                             :
@@ -80,18 +80,18 @@ const Navbar = () => {
                             </Link>
                     }
                     <div className='relative'>
-                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>
+                        <div className='absolute ml-6 text-white py-0 px-2 rounded-full bg-red-700 -top-2'>0</div>
                         <CiHeart size={30}></CiHeart>
                     </div>
                     <div className='relative'>
-                        <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-2'>0</div>
+                        <div className='absolute ml-6 text-white py-0 px-2 rounded-full bg-red-700 -top-2'>0</div>
                         <CiShuffle size={30}></CiShuffle>
                     </div>
                     <Link to='/allShopingCart'>
                         <div className='relative flex gap-4 items-center'>
-                            <div className='absolute ml-6 text-white p-1 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
+                            <div className='absolute ml-6 text-white px-2 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
                             <PiShoppingCartThin size={30}></PiShoppingCartThin>
-                            <div>
+                            <div className='pl-1'>
                                 <h1>Your Cart</h1>
                                 <p className='font-semibold'>${parseInt(totalPrice)}</p>
                             </div>
@@ -106,11 +106,11 @@ const Navbar = () => {
 
 
             {/* SECOND NAV */}
-            <div className='text-black pt-6 font-semibold hidden lg:flex'>
+            <div className='text-black pt-6 hidden lg:flex'>
                 <div className='xl:w-[1320px] mx-auto flex justify-between items-center'>
                     <div className='flex items-center gap-2'>
                         <CiMenuBurger size={25}></CiMenuBurger>
-                        <h1 className='text-lg font-semibold'>Brows All Categories</h1>
+                        <h1 className='text-lg'>Brows All Categories</h1>
                     </div>
                     <h1>|</h1>
 

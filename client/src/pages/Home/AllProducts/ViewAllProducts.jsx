@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import cartIcon from '../../../assets/images/shopping-cart-plus.png'
 import UseAxiosPublic from '../../../hooks/UseAxiosPublic';
-import { PiShoppingCartThin } from 'react-icons/pi';
 import UseAuth from '../../../hooks/UseAuth';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -58,14 +57,14 @@ const ViewAllProducts = () => {
 
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 place-items-center gap-6 gap-x-6'>
                     {
-                        allProducts.map(singleProduct => <div className='flex flex-col justify-between w-[306px] h-full rounded text-black p-3 bg-white space-y-3'>
+                        allProducts.map(singleProduct => <div className='flex flex-col justify-between w-[306px] h-full rounded text-black p-3 bg-white space-y-2'>
                             <img src={singleProduct.image} className='w-full h-56' alt="" />
-                            <h1 className='text-2xl font-semibold'>{singleProduct.name}</h1>
+                            <h1 className='text-3xl font-semibold'>{singleProduct.name}</h1>
                             <p>{singleProduct.category}</p>
                             <p>({singleProduct.review}review)</p>
                             <p className='text-[#E4333E] font-semibold text-xl'>${singleProduct.price}</p>
                             <button onClick={() => handleAddToCart(singleProduct._id)}
-                                className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
+                                className="btn w-full bg-[#3B4DF0] border-none"><img src={cartIcon} alt="" /> Add to Cart</button>
                         </div>
                         )
                     }

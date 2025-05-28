@@ -1,15 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
 import UseAxiosPublic from '../../../hooks/UseAxiosPublic';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { PiShoppingCartThin } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import UseAuth from '../../../hooks/UseAuth';
+import cartIcon from '../../../assets/images/shopping-cart-plus.png'
 
 
 const Products = () => {
@@ -56,9 +55,9 @@ const Products = () => {
 
 
     return (
-        <div className='xl:w-[1320px] pb-20 mx-auto'>
+        <div className='xl:w-[1320px] pb-20 mx-auto font-montserrat'>
             <div className='p-2 rounded mb-6 bg-white text-black flex justify-between items-center'>
-                <h1 className='text-xl lg:text-4xl'>Product Sections</h1>
+                <h1 className='text-xl lg:text-4xl font-semibold'>Product Sections</h1>
                 <Link to='/allProducts'>
                     <h1 className='flex items-center gap-1'>View all<IoIosArrowForward></IoIosArrowForward></h1>
                 </Link>
@@ -94,14 +93,14 @@ const Products = () => {
             >
                 {
                     someProducts.map(product => <SwiperSlide key={product._id}>
-                        <div className='w-[306px] h-[494px] rounded-[12px] text-black p-4 bg-white space-y-3 flex flex-col justify-between'>
+                        <div className='w-[306px] h-[494px] rounded-[12px] text-black p-4 bg-white flex flex-col justify-between mx-2'>
                             <img src={product.image} className='w-full h-56' alt="" />
-                            <h1 className='text-2xl font-semibold'>{product.name}</h1>
+                            <h1 className='text-3xl font-semibold font-montserrat'>{product.name}</h1>
                             <p>{product.category}</p>
                             <p>({product.review}review)</p>
                             <p className='text-[#E4333E] font-semibold text-xl'>${product.price}</p>
                             <button onClick={() => handleAddCart(`/detailsProduct/${product._id}`)}
-                                className="btn w-full bg-[#3B4DF0] border-none"><PiShoppingCartThin size={20}></PiShoppingCartThin> Add to Cart</button>
+                                className="btn w-full bg-[#3B4DF0] border-none"><img src={cartIcon} alt="" /> Add to Cart</button>
                         </div>
                     </SwiperSlide>)
                 }

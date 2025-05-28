@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/images/icon/Vector.png'
 import card1 from '../../assets/images/icon/visa.png'
 import card2 from '../../assets/images/icon/mastar.png'
@@ -7,8 +6,8 @@ import card4 from '../../assets/images/icon/apple.png'
 
 const Footer = () => {
     return (
-        <div className='bg-white pt-16 text-black'>
-            <div className='xl:w-[1320px] pb-20 mx-auto flex justify-between items-center'>
+        <div className='bg-white pt-16 text-black font-montserrat'>
+            <div className='xl:w-[1320px] pb-20 mx-auto flex flex-col lg:flex-row gap-10 justify-between items-center'>
                 <div>
                     <img src={logo} alt="" />
                     <h1 className='text-3xl italic font-bold text-black'>Kalni</h1>
