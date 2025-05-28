@@ -5,6 +5,7 @@ import WeekProducts from './WeekProducts/WeekProducts';
 import Descover from './Descover';
 import BestProducts from './BestProducts/BestProducts';
 import NewsletterSubscribe from './NewsletterSubscribe';
+import Blog from './Blog';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
            {/* <BestProducts></BestProducts> */}
            <Descover></Descover>
            <WeekProducts></WeekProducts>
+           <Blog></Blog>
         </div>
     );
 };

@@ -49,7 +49,7 @@ const ViewAllWeekProducts = () => {
 
 
     return (
-        <div className='text-black pt-[120px] pb-[120px] w-full xl:w-10/12 mx-auto'>
+        <div className='text-black pt-[120px] pb-[120px] w-full xl:w-10/12 mx-auto font-montserrat'>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 place-items-center gap-6 gap-x-6'>
                 {
                     allWeekProducts.map(singleProduct => <div className='flex flex-col justify-between border w-[300px] h-full rounded text-black p-3 bg-white space-y-5'>
