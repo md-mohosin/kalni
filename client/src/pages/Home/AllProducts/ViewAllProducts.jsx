@@ -45,7 +45,7 @@ const ViewAllProducts = () => {
     }
 
     return (
-        <div className='pt-[120px] pb-[120px] text-black xl:w-[1320px] mx-auto flex justify-between font-montserrat'>
+        <div className='pt-[120px] text-black xl:w-[1320px] mx-auto flex justify-between font-montserrat'>
             <div className='w-[287px] h-auto bg-white rounded'>
 
             </div>

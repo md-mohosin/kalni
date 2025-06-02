@@ -57,14 +57,14 @@ const WeekProducts = () => {
 
 
     return (
-        <div className='xl:w-[1320px] pb-20 mx-auto font-montserrat'>
-            <div className='p-2 rounded mb-6 bg-white text-black flex justify-between items-center'>
+        <div className='xl:w-[1320px] pt-20 mx-auto font-montserrat'>
+            <div className='px-6 py-3 rounded-lg mb-6 bg-white text-black flex justify-between items-center'>
                 <div className='flex flex-col lg:flex-row items-center justify-center gap-4'>
                     <h1 className='text-xl lg:text-4xl flex justify-self-start'>Deal of the week </h1>
                     <p>Don't miss out on this weeks deals</p>
                 </div>
                 <Link to='/allWeekProducts'>
-                    <h1 className='flex items-center gap-1'>View all <IoIosArrowForward></IoIosArrowForward></h1>
+                    <h1 className='flex items-center gap-3'>View all <IoIosArrowForward></IoIosArrowForward></h1>
                 </Link>
             </div>
 
@@ -99,8 +99,8 @@ const WeekProducts = () => {
                 {
                     someWeekProduct.map(product => <SwiperSlide key={product._id}>
 
-                        <div className='w-full h-[494px] rounded-[12px] text-black p-4 bg-white flex flex-col justify-between'>
-                            <img src={product.image} className='w-full h-56' alt="" />
+                        <div className='w-full h-[494px] rounded-[12px] text-black p-6 bg-white flex flex-col justify-between'>
+                            <img src={product.image} className='w-full h-56 rounded' alt="" />
                             <h1 className='text-3xl font-semibold'>{product.name}</h1>
                             <p>{product.category}</p>
                             <p>({product.review}review)</p>

@@ -9,7 +9,6 @@ import { MdMenu } from 'react-icons/md';
 import { IoIosArrowDown } from 'react-icons/io';
 import UseAuth from '../../hooks/UseAuth';
 import UseCart from '../../hooks/UseCart';
-import { RxDashboard } from "react-icons/rx";
 
 const Navbar = () => {
 
@@ -39,7 +38,7 @@ const Navbar = () => {
 
 
             {/* FIRST NAV */}
-            <div className='lg:w-11/12 xl:w-[1320px] md:w-11/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 pb-6 pt-6'>
+            <div className='lg:w-11/12 xl:w-[1320px] md:w-11/12 mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 pb-4 pt-4'>
                 <div className='flex justify-between lg:w-3/4 w-full md:w-full'>
                     <Link to='/'>
                         <div className='flex items-center gap-2 lg:w-1/3'>
@@ -49,16 +48,24 @@ const Navbar = () => {
                     </Link>
 
 
-                    <div className='border-2 flex justify-between  items-center xl:w-[756px]'>
-                        <select defaultValue="All Products" className="hidden lg:flex select select-ghost text-black focus:bg-white focus:text-black focus:outline-none">
-                            <option disabled={true}>All Products</option>
-                            <option>Inter</option>
-                            <option>Poppins</option>
-                            <option>Raleway</option>
-                        </select>
-                        <h1 className='font-semibold text-black px-4 hidden lg:flex'>|</h1>
-                        <input type="text" className='bg-white w-auto text-black focus:outline-none' placeholder='Search ' />
-                        <button className="hidden lg:flex btn bg-[#3B4DF0] border-none rounded-none px-6">Search</button>
+                    <div className='border-2 flex justify-between items-center xl:w-[756px]'>
+                        <div className='flex items-center w-1/2'>
+
+
+
+
+                            <div className='text-black pl-6 w-full flex items-center gap-4'>
+                                <div to='/' className='flex items-center gap-14 cursor-pointer'>All Categories
+                                    <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
+                                </div>
+                            <h1 className='font-semibold hidden lg:flex text-gray-500'>|</h1>
+                            </div>
+
+                        </div>
+                        <div className='flex justify-between w-full'>
+                            <input type="text" className='bg-white w-full text-black focus:outline-none' placeholder='Search for products.....' />
+                            <button className="hidden lg:flex btn bg-[#3B4DF0] border-none rounded-none px-6">Search</button>
+                        </div>
                     </div>
                     <MdMenu color='black' size={30} className='lg:hidden'></MdMenu>
                 </div>
@@ -68,7 +75,6 @@ const Navbar = () => {
                         user ?
                             <Link to='/dashboard/home'
                                 className='flex justify-center items-center text-lg gap-1 text-[#3346ef] font-semibold'>
-                                {/* <RxDashboard size={24}></RxDashboard> */}
                                 <h1>Dashboard</h1>
                             </Link>
                             :
@@ -80,17 +86,19 @@ const Navbar = () => {
                             </Link>
                     }
                     <div className='relative'>
-                        <div className='absolute ml-6 text-white py-0 px-2 rounded-full bg-red-700 -top-2'>0</div>
+                        <div className='absolute ml-6 text-white  px-2 rounded-full bg-red-700 -top-2 -right-3'>0</div>
                         <CiHeart size={30}></CiHeart>
                     </div>
                     <div className='relative'>
-                        <div className='absolute ml-6 text-white py-0 px-2 rounded-full bg-red-700 -top-2'>0</div>
+                        <div className='absolute ml-6 text-white  px-2 rounded-full bg-red-700 -top-2 -right-3'>0</div>
                         <CiShuffle size={30}></CiShuffle>
                     </div>
                     <Link to='/allShopingCart'>
-                        <div className='relative flex gap-4 items-center'>
-                            <div className='absolute ml-6 text-white px-2 py-0 rounded-full bg-red-700 -top-0'>{cartData.length}</div>
-                            <PiShoppingCartThin size={30}></PiShoppingCartThin>
+                        <div className='flex gap-5 items-center'>
+                            <div className='relative'>
+                                <div className='absolute ml-6 text-white px-2 rounded-full -top-2 -right-3 bg-red-700'>{cartData.length}</div>
+                                <PiShoppingCartThin size={30}></PiShoppingCartThin>
+                            </div>
                             <div className='pl-1'>
                                 <h1>Your Cart</h1>
                                 <p className='font-semibold'>${parseInt(totalPrice)}</p>
@@ -101,23 +109,21 @@ const Navbar = () => {
 
             </div>
 
-            <hr className='border' />
+            {/* <hr className='border' /> */}
 
 
 
             {/* SECOND NAV */}
-            <div className='text-black pt-6 hidden lg:flex'>
+            <div className='text-black pt-3 hidden lg:flex'>
                 <div className='xl:w-[1320px] mx-auto flex justify-between items-center'>
-                    <div className='flex items-center gap-2'>
-                        <CiMenuBurger size={25}></CiMenuBurger>
-                        <h1 className='text-lg'>Brows All Categories</h1>
+                    <div className='flex items-center gap-8'>
+                        <h1 className='text-lg flex items-center gap-2'><CiMenuBurger size={25}></CiMenuBurger>Brows All Categories</h1>
+                        <h1>|</h1>
                     </div>
-                    <h1>|</h1>
-
                     <NavLink to='/'>Home</NavLink>
 
                     <div className='relative group'>
-                        <div to='/' className='flex items-center cursor-pointer'>Popular Categories
+                        <div to='/' className='flex items-center gap-2 cursor-pointer'>Popular Categories
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
                         </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
@@ -125,7 +131,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='relative group'>
-                        <div to='/' className='flex items-center cursor-pointer'>Product Section
+                        <div to='/' className='flex items-center gap-2 cursor-pointer'>Product Section
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
                         </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
@@ -133,7 +139,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className='relative group'>
-                        <div to='/' className='flex items-center cursor-pointer'>Newsletter
+                        <div to='/' className='flex items-center gap-2 cursor-pointer'>Newsletter
                             <span className='group-hover:rotate-180 duration-300'><IoIosArrowDown></IoIosArrowDown></span>
                         </div>
                         <ul className='absolute z-50 bg-black p-3 rounded-md text-white hidden group-hover:block'>
