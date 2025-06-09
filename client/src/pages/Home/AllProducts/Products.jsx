@@ -55,7 +55,7 @@ const Products = () => {
 
 
     return (
-        <div className='xl:w-[1320px] pt-20 mx-auto font-montserrat'>
+        <div className='products xl:w-[1340px] pt-20 mx-auto font-montserrat'>
             <div className='px-6 py-3 rounded-lg mb-6 bg-white text-black flex justify-between items-center'>
                 <h1 className='text-xl lg:text-4xl font-semibold'>Product Sections</h1>
                 <Link to='/allProducts'>

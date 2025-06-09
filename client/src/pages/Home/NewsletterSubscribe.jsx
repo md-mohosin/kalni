@@ -29,7 +29,7 @@ const NewsletterSubscribe = () => {
 
     return (
         <div className='bg-[#3B4DF0] lg:mx-0 mx-4 lg:p-0 p-4 lg:rounded-none rounded font-montserrat mt-24'>
-            <div className='xl:w-[1320px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-10'>
+            <div className='xl:w-[1340px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-10'>
                 <div>
                     <p className='text-lg'>SALE 20% OFF ALL STORE</p>
                     <h1 className='text-3xl font-semibold'>Subscribe our Newsletter</h1>

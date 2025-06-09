@@ -27,7 +27,7 @@ const AllShopingCart = () => {
     }
 
     return (
-        <div className='xl:w-[1320px] mx-auto text-black pt-20 pb-16'>
+        <div className='xl:w-[1340px] mx-auto text-black pt-20 pb-16'>
             <div className='flex gap-10 justify-between bg-white p-8 rounded-md'>
                 <div className='w-[900px]'>
                     <table className="table">

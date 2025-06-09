@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
 
     return (
-        <div>
+        <div className='banner'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                     <div className='bg-white gap-10 h-auto flex flex-col-reverse lg:flex-row items-center justify-between pt-4'>
                         <div className='lg:w-1/2 text-black px-4'>
-                            <div className='flex flex-col xl:w-[625px] justify-self-end space-y-6'>
+                            <div className='flex flex-col xl:w-[645px] justify-self-end space-y-6'>
                                 <h1 className='text-4xl lg:text-6xl font-bold font-inter'>Discover your <br />perfect   stylish and <br /> suited cloths</h1>
                                 <p className='font-inter'>Up to 20% discount
                                     in all categories of <br /> your buying fashion clothes. Limited time only. Get hurry!</p>
@@ -33,7 +33,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className='bg-white gap-10 h-auto flex flex-col-reverse lg:flex-row items-center justify-between pt-4'>
                         <div className='lg:w-1/2 text-black px-4'>
-                            <div className=' flex flex-col xl:w-[625px] justify-self-end space-y-6'>
+                            <div className=' flex flex-col xl:w-[645px] justify-self-end space-y-6'>
                                 <h1 className='text-4xl lg:text-6xl font-bold font-inter'>Discover your  perfect <br /> stylish and  suited cloth</h1>
                                 <p>Up to 20% discount
                                     in all categories of <br /> your buying fashion clothes. Limited time only. Get hurry!</p>

@@ -6,7 +6,7 @@ const Checkout = () => {
     const [cartData] = UseCart()
     return (
         <div>
-            <div className='w-[1320px] mx-auto flex justify-between gap-10 text-black py-28'>
+            <div className='w-[1340px] mx-auto flex justify-between gap-10 text-black py-28'>
 
                 <div className='w-1/2 border'>
                 </div>

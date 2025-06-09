@@ -7,7 +7,7 @@ import card4 from '../../assets/images/icon/apple.png'
 const Footer = () => {
     return (
         <div className='bg-white pt-16 text-black font-montserrat'>
-            <div className='xl:w-[1320px] pb-20 mx-auto flex flex-col lg:flex-row gap-10 justify-between items-center'>
+            <div className='xl:w-[1340px] pb-20 mx-auto flex flex-col lg:flex-row gap-10 justify-between items-center'>
                 <div>
                     <img src={logo} alt="" />
                     <h1 className='text-3xl italic font-bold text-black'>Kalni</h1>
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='bg-[#EAECF0]'>
-                <div className='xl:w-[1320px] mx-auto py-3 flex justify-between'>
+                <div className='xl:w-[1340px] mx-auto py-3 flex justify-between'>
                     <h1>© 2025 All Rights Reserved </h1>
                     <div className='flex gap-2'>
                         <img src={card1} alt="" />

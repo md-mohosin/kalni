@@ -7,7 +7,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 const Blog = () => {
     return (
-        <div className='xl:w-[1320px] mx-auto text-black font-montserrat pt-16'>
+        <div className='xl:w-[1340px] mx-auto text-black font-montserrat pt-16'>
             <div className='px-6 py-3 rounded-lg mb-6 bg-white text-black flex justify-between items-center'>
                 <h1 className='text-xl lg:text-4xl font-semibold'>From Our Blog</h1>
 

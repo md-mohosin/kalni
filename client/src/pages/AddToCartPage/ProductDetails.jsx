@@ -25,7 +25,7 @@ const ProductDetails = () => {
 
     return (
         <div className='pt-28 pb-28'>
-            <div className='bg-white xl:w-[1320px] mx-auto flex gap-10 p-8 rounded-md'>
+            <div className='bg-white xl:w-[1340px] mx-auto flex gap-10 p-8 rounded-md'>
                 <div className='xl:w-1/2'>
                     <img src={detailsProduct.image} className='xl:w-full xl:h-[509px]' alt="" />
                 </div>
@@ -57,7 +57,7 @@ const ProductDetails = () => {
 
             {/* TAB */}
            <div className='pt-[70px]  pb-[80px] text-black'>
-           <div className='bg-white xl:w-[1320px] mx-auto '>
+           <div className='bg-white xl:w-[1340px] mx-auto '>
                 <Tabs className='p-10'>
                     <TabList>
                         <Tab>Description</Tab>

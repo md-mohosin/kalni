@@ -49,7 +49,7 @@ const DashboardLayout = () => {
     return (
         <div className="bg-[#F1F5F6]">
             <Navbar></Navbar>
-            <div className='lg:w-[1320px] mx-auto h-[861px] mt-8 mb-24 bg-white flex gap-8 p-10'>
+            <div className='lg:w-[1340px] mx-auto h-[861px] mt-8 mb-24 bg-white flex gap-8 p-10'>
                 <div onClick={() => setIsOpen(!isOpen)}
                     className="ml-0 top-0 lg:hidden flex">
                     <RiMenuFold2Line size={40} color="black" />

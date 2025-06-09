@@ -23,7 +23,7 @@ const BestProducts = () => {
     const bestProducts = products.filter(product => product.campaign == 'best-price')
 
     return (
-        <div className='pb-[120px] xl:w-[1320px] mx-auto text-black'>
+        <div className='pb-[120px] xl:w-[1340px] mx-auto text-black'>
             <div className='bg-white p-3 rounded-md'>
                 <h1 className='text-xl'>Get Our Best Prices :{bestProducts.length}</h1>
             </div>
