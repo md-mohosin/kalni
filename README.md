@@ -1,4 +1,4 @@
-# E-commerce Website
+# 🛍️ E-commerce Website
 An e-commerce platform where users can browse products, add them to the cart, and place orders. It includes login and registration features.
 
 
