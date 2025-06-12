@@ -10,7 +10,7 @@ An e-commerce platform where users can browse products, add them to the cart, an
 - Add to Cart / Remove from Cart
 - Secure Checkout System
 - Order History
-- Admin Panel for Product Management
+✅ This website supports two roles: Admin (with full product and user management access) and User (with product browsing and ordering access).
 
 
 
